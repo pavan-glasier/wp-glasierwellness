@@ -1,0 +1,10 @@
+
+Time: 2022/10/13 10:43:17
+Error Number: 2
+Error Type: Run-time warnings (non-fatal errors). Execution of the script is not halted. 
+Error Msg: Invalid argument supplied for foreach()
+IP Address: 122.170.154.240
+File Name: /bitnami/wordpress/wp-content/plugins/stop-spammer-registrations-plugin/settings/ss_blocklist_settings.php
+Line Number: 159
+Memory Used: 6291456 Peak: 6291456
+---------------------

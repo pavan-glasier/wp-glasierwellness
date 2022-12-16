@@ -1,0 +1,636 @@
+@charset "UTF-8";
+
+/*
+Theme Name: Glasier Wellness
+Theme URI: https://www.glasierwellness.com/
+Author: Glasierinc
+Author URI: http://glasierinc.com/
+Description: 
+Requires at least: 5.3
+Tested up to: 5.8
+Requires PHP: 5.6
+Text Domain: glasierwellness
+Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+Glasier Wellness WordPress Theme, (C) 2020 WordPress.org
+Glasier Wellness is distributed under the terms of the GNU GPL.
+*/
+
+/**
+ * SETTINGS
+ * File-header..........The file header for the themes style.css file.
+ * Fonts................Any font files, if the project needs specific fonts.
+ * Global...............Project-specific, globally available variables.
+ *
+ * TOOLS
+ * Functions............Global functions.
+ * Mixins...............Global mixins.
+ *
+ * GENERIC
+ * Normalize.css........Normalise browser defaults.
+ * Breakpoints..........Mixins and variables for responsive styles
+ * Vertical-margins.....Vertical spacing for the main components.
+ * Reset................Reset specific elements to make them easier to style in other contexts.
+ * Clearings............Clearings for the main components.
+ *
+ * ELEMENTS
+ * Blockquote...........Default blockquote.
+ * Forms................Element-level form styling.
+ * Headings.............H1–H6
+ * Links................Default links.
+ * Lists................Default lists.
+ * Media................Images, Figure, Figcaption, Embed, iFrame, Objects, Video.
+ *
+ * BLOCKS
+ * Audio................Specific styles for the audio block.
+ * Button...............Specific styles for the button block.
+ * Code.................Specific styles for the code block.
+ * Columns..............Specific styles for the columns block.
+ * Cover................Specific styles for the cover block.
+ * File.................Specific styles for the file block.
+ * Gallery..............Specific styles for the gallery block.
+ * Group................Specific styles for the group block.
+ * Heading..............Specific styles for the heading block.
+ * Image................Specific styles for the image block.
+ * Latest comments......Specific styles for the latest comments block.
+ * Latest posts.........Specific styles for the latest posts block.
+ * Legacy...............Specific styles for the legacy gallery.
+ * List.................Specific styles for the list block.
+ * Media text...........Specific styles for the media and text block.
+ * Navigation...........Specific styles for the navigation block.
+ * Paragraph............Specific styles for the paragraph block.
+ * Pullquote............Specific styles for the pullquote block.
+ * Quote................Specific styles for the quote block.
+ * Search...............Specific styles for the search block.
+ * Separator............Specific styles for the separator block.
+ * Spacer...............Specific styles for the spacer block.
+ * Table................Specific styles for the table block.
+ * Verse................Specific styles for the verse block.
+ * Video................Specific styles for the video block.
+ * Utilities............Block alignments.
+ *
+ * COMPONENTS
+ * Header...............Header styles.
+ * Footer...............Footer styles.
+ * Comments.............Comment styles.
+ * Archives.............Archive styles.
+ * 404..................404 styles.
+ * Search...............Search styles.
+ * Navigation...........Navigation styles.
+ * Footer Navigation....Footer Navigation styles.
+ * Pagination...........Pagination styles.
+ * Single...............Single page and post styles.
+ * Posts and pages......Misc, sticky post styles.
+ * Entry................Entry, author biography.
+ * Widget...............Widget styles.
+ * Editor...............Editor styles.
+ *
+ * UTILITIES
+ * A11y.................Screen reader text, prefers reduced motion etc.
+ * Color Palette........Classes for the color palette colors.
+ * Editor Font Sizes....Editor Font Sizes.
+ * Measure..............The width of a line of text, in characters.
+ */
+
+/* Categories 01 to 03 are the basics. */
+::selection {
+    background: #488dca;
+    color: #fff;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #488dca2e; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #488dca; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #054371; 
+}
+
+
+
+
+.text-danger {
+    color: #dc3232;
+    font-size: 14px;
+    font-weight: 600;
+}
+.header-social [class*='fa-'],
+.header-social [class*='fas-'] {
+    display: block;
+    position: relative;
+    height: 48px;
+    padding: 0 13px;
+    z-index: 1;
+    font-size: 22px;
+    line-height: 48px;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+    transition: all .2s;
+    border-radius: 50%;
+}
+body [class^="fa-"],
+body [class*="fa-"] {
+    font-family: 'FontAwesome' !important;
+}
+
+button.sub-menu-toggle {
+    display: none;
+}
+
+
+
+
+.blog-post-sm-photo img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+}
+
+
+
+
+.prd-img {
+    width: 100%;
+    height: 200px;
+}
+
+.prd-img a {
+    height: 100% !important;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+	background: #f2f7fb;
+}
+.double-title:after {
+    color: #f5f5f5;
+}
+
+
+.modal-product .modal-dialog {
+    max-width: 1000px !important;
+}
+
+.page-template-product-search .prd-grid:not(.prd-carousel) .prd:nth-child(3n+1) {
+    clear: none;
+}
+.page-template-product-search .prd-grid:not(.prd-carousel) .prd {
+    width: calc(25% - 30px);
+}
+
+.modal-form .detail-prd-img img {
+    width: 100%;
+}
+
+
+/* FOOTER CSS */
+form.footer-subscribe {
+    position: relative;
+}
+body .footer-subscribe .input-group .form-control {
+    width: 100%;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.footer-subscribe .subscribe_mail {
+    width: 85%;
+}
+.footer-subscribe .submit-btn-span {
+    width: 15%;
+    height: 43px;
+    display: flex;
+    align-items: center;
+}
+.footer-subscribe .submit-btn {
+    width: 43px;
+    height: 43px;
+    margin: 0;
+    padding: 0;
+    line-height: 43px;
+    border: none;
+    text-align: center;
+    outline: none;
+    box-shadow: none;
+}
+.footer-subscribe .wpcf7-spinner {
+    margin: 0;
+    position: absolute;
+    right: -30px;
+}
+.footer-subscribe .wpcf7-not-valid-tip {
+    color: #dc3232;
+    display: block;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 600;
+}
+.footer-subscribe .wpcf7-response-output {
+    font-size: 14px;
+    margin: 0 !important;
+    position: absolute;
+    letter-spacing: 0px;
+    top: 70px;
+    max-width: 300px;
+    border-radius: 10px;
+}
+.wpcf7-response-output{
+    border-radius: 25px;
+}
+.wpcf7 form.invalid .wpcf7-response-output{
+    background: #ffb900;
+    color: #fff;
+    line-height: normal;
+
+}
+.wpcf7 form.failed .wpcf7-response-output{
+    background: #dc3232;
+    color: #fff;
+    line-height: normal;
+}
+.wpcf7 form.sent .wpcf7-response-output {
+    background: #46b450;
+    color: #fff;
+    line-height: normal;
+}
+.quick-links {
+    list-style: none;
+    padding-left: 25px;
+}
+.quick-links li a{
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+.quick-links li a:hover {
+    text-decoration: none;
+}
+.quick-links li a:before {
+    content: '\e906';
+    font-family: 'dentco';
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    background: #488dca;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    margin: 5px 0;
+    border-radius: 100%;
+    transform: translate(-24px, 0px);
+    font-size: 8px;
+    transition: all .3s ease-in-out;
+}
+.quick-links li a:hover::before {
+    transform: translate(-30px, 0px);
+}
+.wpcf7-not-valid-tip {
+    font-size: .8em;
+    font-weight: 500 !important;
+}
+form.footer-inquiry {
+    position: relative;
+}
+body .footer-inquiry .input-group {
+    margin-bottom: 10px;
+}
+body .footer-inquiry .input-group .form-control {
+    width: 100%;
+}
+.footer-inquiry .submit-btn {
+    width: 43px;
+    height: 43px;
+    margin: 0;
+    padding: 0;
+    line-height: 43px;
+    border: none;
+    text-align: center;
+    outline: none;
+    box-shadow: none;
+}
+.footer-inquiry .wpcf7-spinner {
+    margin: 0;
+    position: absolute;
+    right: 100px;
+    bottom: 10px;
+}
+.footer-inquiry .wpcf7-not-valid-tip {
+    color: #dc3232;
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    height: 16px;
+    line-height: 22px;
+    margin-left: -40px;
+}
+.footer-inquiry .wpcf7-response-output {
+    font-size: 14px;
+    margin: 5px 0 0 0 !important;
+    position: relative;
+    letter-spacing: 0px;
+    border-radius: 10px;
+    line-height: normal;
+}
+
+/* Products */
+.blog-isotope {
+    height: auto !important;
+}
+.blog-isotope .blog-post {
+    position: relative !important;
+    top: unset !important;
+    left: unset !important;
+    right: unset !important;
+    bottom: unset !important;
+}
+.prd-info .price span {
+    color: #aaa;
+    text-decoration: line-through;
+    font-size: 18px;
+}
+.product-block-price span {
+    font-size: 18px;
+    color: #aaa;
+    text-decoration: line-through;
+}
+span.saparts:last-child {
+    display: none;
+}
+.product-previews-item:last-child {
+    margin-bottom: 0;
+}
+.single.single-post .blog-post .post-image {
+    height: auto;
+}
+.blog-post .post-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+}
+
+.userpic .author {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 10px -8px #000;
+    overflow: hidden;
+}
+.userpic .author img {
+    width: 100%;
+    height: 100%;
+    border: 3px solid #fff;
+    border-radius: 100%;
+}
+.comments-block .comment {
+    box-shadow: 0px 2px 17px -10px #b1afaf;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.pagination .page-numbers {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 2px solid #cccccca1;
+    border-radius: 100%;
+    margin: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.pagination .page-numbers:hover {
+    border: 2px solid #488dca;
+}
+span.page-numbers.current {
+    background: #488dca;
+    border: 2px solid #488dca;
+    color: #fff;
+}
+
+a.prev.page-numbers,
+a.next.page-numbers {
+    width: auto;
+    border-radius: 30px;
+    padding: 0px 15px;
+    
+}
+.card {
+    display: flex;
+    align-items: center;
+}
+.pro-img {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 100%;
+    margin-right: 10px;
+    border: 2px solid #fff;
+    box-shadow: 0px 2px 15px -10px #000;
+}
+.pro-img img {
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    border-radius: 100%;
+}
+span.vcard {
+    text-transform: capitalize;
+}
+
+.prd-grid:not(.prd-carousel) .prd:nth-child(3n+1){
+    clear: unset;
+}
+
+.product-previews {
+    max-height: 400px;
+    overflow: auto;
+}
+
+.form-control.qty {
+    width: 15%;
+}
+.btn {
+    border-radius: 30px !important;
+}
+.highlight {
+    color: #488dca;
+    background: #ffffff;
+    border-radius: 30px;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    line-height: 22px;
+    text-align: center;
+    border: 1px solid;
+}
+.search-post {
+    border: 1px solid #e7e7e7;
+    text-align: center;
+    padding: 30px 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    position: relative;
+}
+.search-post h5{
+    margin: 0;
+}
+
+span.badges {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    background: #488dca;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    color: #fff;
+    font-size: 12px;
+    line-height: normal;
+    padding: 2px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.paginations .nav-links {
+    width: 100%;
+    text-align: center;
+}
+.paginations .nav-links .page-numbers {
+    border-radius: 4px;
+    padding: 3px;
+    font-size: 14px;
+    position: relative;
+}
+/*  */
+.prev.page-numbers svg.svg-icon {
+    position: absolute;
+    top: 0;
+    left: -22px;
+}
+.next.page-numbers svg.svg-icon {
+    position: absolute;
+    top: 0;
+}
+.postThumb {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+.postThumb img{
+    width: 100%;
+
+}
+.err {
+    color: red;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+table.shop_attributes {
+    width: 100%;
+}
+table.shop_attributes th{
+    width: 20%;
+}
+
+
+li.active-cat {
+    font-weight: 900;
+}
+li.active-cat:before {
+    font-size: 10px !important;
+    font-weight: 900 !important;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    display: none !important;
+    transition: all .2s ease-in-out;
+}
+.loadMore img{
+    width: 65px;
+    filter: hue-rotate(30deg);
+    opacity: 0.8;
+}
+
+/* new product list page */
+.pro-heading{
+	border: 2px solid #f2f7fb;
+    padding: 20px;
+    border-radius: 8px;
+}
+.column-filters .side-block > h3 {
+    position: relative;
+    background: #f2f7fb;
+    padding-left: 20px;
+}
+.column-filters .side-block > h3:before {
+    content: "";
+    width: 4px;
+    height: 100%;
+    background: #488dca;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+
+/* About us css */
+.list-details .accordion-heading {
+    position: relative;
+}
+.accordion-toggle.collapsed:before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background: #0000;
+    top: calc(36% - 1px);
+    right: 1rem;
+    display: block;
+    transition: all 0.3s;
+    background-image: url(http://www.glasierwellness.com/wp-content/uploads/2022/10/arrow-26.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+:not(.collapsed).accordion-toggle:before {
+	content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background: #0000;
+    top: calc(36% - 1px);
+    right: 1rem;
+    display: block;
+    transition: all 0.3s;
+    background-image: url(http://www.glasierwellness.com/wp-content/uploads/2022/10/arrow-26.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+	transform: rotate(180deg);
+}
+.page-id-43 .banner-appointment-form img {margin-top: 65px !important;}
+.about-singel-items img {margin-bottom: 15px;}
+.cf7sr-g-recaptcha {
+    transform: scale(.8);
+    transform-origin: 0;
+}
+p:empty {
+    display: none;
+}
+button:disabled,
+button:disabled i {
+    cursor: no-drop !important;
+}
